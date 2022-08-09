@@ -1,0 +1,11 @@
+@font-face {
+	font-family: 'Quicksand';
+	src: url('Quicksand-Light.ttf') format('truetype');
+}
+
+body {
+	background-color: #2e2e2e;
+	color: #fff;
+	font-family: 'Quicksand', sans-serif;
+	margin: 0;
+}
