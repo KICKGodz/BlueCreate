@@ -46,7 +46,8 @@ var model;
 fetch('../create/shaft.json')
 	.then((response) => response.json())
 	.then((json) => {
-		model = TModel.MinecraftModelJsonLoader();
+          console.log(json)
+		// model = TModel.MinecraftModelJsonLoader();
 		// MCModel.MinecraftModel.fromJson(json);
 	});
 
@@ -56,8 +57,8 @@ fetch('../create/shaft.json')
 // const group = new THREE.Group();
 // group.add(model.elements);
 
-// var board = checkerboard(5);
-// scene.add(board);
+var board = checkerboard(5);
+scene.add(board);
 
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
