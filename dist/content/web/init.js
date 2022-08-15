@@ -1,5 +1,9 @@
-const MCModel = require('@oran9e/minecraft-model');
-const TModel = require('@oran9e/three-mcmodel');
+// const MCModel = require('@oran9e/minecraft-model');
+// const TModel = require('@oran9e/three-mcmodel');
+
+const { MinecraftModelLoader, MinecraftTextureLoader } = require('./temp/');
+
+console.log(require);
 
 const blocks = (blocks) => {
 	return blocks * 16;
@@ -42,23 +46,14 @@ const camera = new THREE.PerspectiveCamera(
 camera.position.set(75, 100, 115);
 camera.lookAt(0, 0, 0);
 
-var model;
-fetch('../create/shaft.json')
-	.then((response) => response.json())
-	.then((json) => {
-          console.log(json)
-		// model = TModel.MinecraftModelJsonLoader();
-		// MCModel.MinecraftModel.fromJson(json);
-	});
+new MinecraftModelLoader().load('../create/shaft.json', (model) => {
+	const textureLoader = new MinecraftTextureLoader();
+	model.resolveTextures((path) => textureLoader.load(`${path}.png`));
+	scene.add(model);
+});
 
-// var model = MCModel.MinecraftModel.fromJson("../create/shaft.json");
-
-// //add group
-// const group = new THREE.Group();
-// group.add(model.elements);
-
-var board = checkerboard(5);
-scene.add(board);
+// var board = checkerboard(10);
+// scene.add(board);
 
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
