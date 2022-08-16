@@ -1,9 +1,10 @@
 // const MCModel = require('@oran9e/minecraft-model');
 // const TModel = require('@oran9e/three-mcmodel');
 
-const { MinecraftModelLoader, MinecraftTextureLoader } = require('./temp/');
-
-console.log(require);
+const {
+	MinecraftModelLoader,
+	MinecraftTextureLoader,
+} = require('three-mcmodel');
 
 const blocks = (blocks) => {
 	return blocks * 16;
@@ -39,24 +40,25 @@ const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x2e2e2e);
 const camera = new THREE.PerspectiveCamera(
 	75,
-	window.innerWidth / window.innerHeight,
+	(window.innerWidth * 0.75) / (window.innerHeight * 0.75),
 	0.1,
 	1000
 );
 camera.position.set(75, 100, 115);
 camera.lookAt(0, 0, 0);
 
-new MinecraftModelLoader().load('../create/shaft.json', (model) => {
-	const textureLoader = new MinecraftTextureLoader();
-	model.resolveTextures((path) => textureLoader.load(`${path}.png`));
-	scene.add(model);
-});
+// new MinecraftModelLoader().load('../create/shaft.json', (model) => {
+// 	const textureLoader = new MinecraftTextureLoader();
+// 	model.resolveTextures((path) => textureLoader.load(`${path}.png`));
+// 	scene.add(model);
+// });
 
-// var board = checkerboard(10);
-// scene.add(board);
+var board = checkerboard(10);
+scene.add(board);
 
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.domElement.style.border = '1px solid white';
 document.body.appendChild(renderer.domElement);
 
 const controls = new THREE.OrbitControls(camera, renderer.domElement);

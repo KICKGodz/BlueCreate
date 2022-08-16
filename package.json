@@ -8,6 +8,7 @@
 		"three": "^0.143.0"
 	},
 	"devDependencies": {
-		"@tauri-apps/cli": "^1.0.5"
+		"@tauri-apps/cli": "^1.0.5",
+		"@types/three": "^0.143.0"
 	}
 }
