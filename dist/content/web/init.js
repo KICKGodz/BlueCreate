@@ -1,10 +1,7 @@
 // const MCModel = require('@oran9e/minecraft-model');
 // const TModel = require('@oran9e/three-mcmodel');
 
-const {
-	MinecraftModelLoader,
-	MinecraftTextureLoader,
-} = require('three-mcmodel');
+const TModel = require('/lib/index.js');
 
 const blocks = (blocks) => {
 	return blocks * 16;
@@ -47,11 +44,12 @@ const camera = new THREE.PerspectiveCamera(
 camera.position.set(75, 100, 115);
 camera.lookAt(0, 0, 0);
 
-// new MinecraftModelLoader().load('../create/shaft.json', (model) => {
-// 	const textureLoader = new MinecraftTextureLoader();
-// 	model.resolveTextures((path) => textureLoader.load(`${path}.png`));
-// 	scene.add(model);
-// });
+new MinecraftModelLoader().load('../create/shaft.json', (model) => {
+	console.log('loaded');
+	// const textureLoader = new MinecraftTextureLoader();
+	// model.resolveTextures((path) => textureLoader.load(`../create/${path}.png`));
+	// scene.add(model);
+});
 
 var board = checkerboard(10);
 scene.add(board);
