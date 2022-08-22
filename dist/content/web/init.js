@@ -71,7 +71,7 @@ fetch('../create/shaft.json')
 // scene.add(board);
 
 const renderer = new THREE.WebGLRenderer();
-renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setSize(window.innerWidth * 0.75, window.innerHeight * 0.75);
 renderer.domElement.style.border = '1px solid white';
 document.body.appendChild(renderer.domElement);
 
