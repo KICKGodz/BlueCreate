@@ -1,5 +1,5 @@
-// const MCModel = require('@oran9e/minecraft-model');
-// const TModel = require('@oran9e/three-mcmodel');
+// const MCModel = require('@oran9e/minecraft-model')
+// const TModel = require('@oran9e/three-mcmodel')
 
 const {
 	MinecraftModelLoader,
@@ -54,21 +54,21 @@ fetch('../create/shaft.json')
 		new MinecraftModelMesh(JSON.stringify(json)).then((mesh) => {
 			console.log(mesh);
 		});
-		// const mesh = new THREE.Mesh(model, new THREE.MeshBasicMaterial({ color: 0xcbcec7 }));
-		// mesh.position.set(0, 0, 0);
-		// mesh.scale.set(baseSize[0], baseSize[1], baseSize[2]);
-		// scene.add(mesh);
+		// const mesh = new THREE.Mesh(model, new THREE.MeshBasicMaterial({ color: 0xcbcec7 }))
+		// mesh.position.set(0, 0, 0)
+		// mesh.scale.set(baseSize[0], baseSize[1], baseSize[2])
+		// scene.add(mesh)
 	});
 
 // new MinecraftModelLoader().load(require('dist/create/shaft.json'), (model) => {
-// 	console.log('loaded');
-// 	// const textureLoader = new MinecraftTextureLoader();
-// 	// model.resolveTextures((path) => textureLoader.load(`../create/${path}.png`));
-// 	// scene.add(model);
-// });
+// 	console.log('loaded')
+// 	// const textureLoader = new MinecraftTextureLoader()
+// 	// model.resolveTextures((path) => textureLoader.load(`../create/${path}.png`))
+// 	// scene.add(model)
+// })
 
-// var board = checkerboard(10);
-// scene.add(board);
+// var board = checkerboard(10)
+// scene.add(board)
 
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth * 0.75, window.innerHeight * 0.75);
@@ -78,10 +78,10 @@ document.body.appendChild(renderer.domElement);
 const controls = new THREE.OrbitControls(camera, renderer.domElement);
 
 // window.addEventListener('resize', () => {
-//     camera.aspect = window.innerWidth / window.innerHeight;
-//     camera.updateProjectionMatrix();
-//     renderer.setSize(window.innerWidth, window.innerHeight);
-// });
+//     camera.aspect = window.innerWidth / window.innerHeight
+//     camera.updateProjectionMatrix()
+//     renderer.setSize(window.innerWidth, window.innerHeight)
+// })
 
 function animate() {
 	requestAnimationFrame(animate);
