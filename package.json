@@ -1,5 +1,5 @@
 {
-	"name": "BlueCreate",
+	"name": "bluecreate",
 	"scripts": {
 		"tauri": "tauri"
 	},
