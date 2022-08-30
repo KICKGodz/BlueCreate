@@ -3,7 +3,7 @@
 
 	// Press - Presses Items or Liquids into Sheets or other Products
 	function Press() {
-		this.addInput('Item / Liquid');
+		this.addInput('Item / Liquid', 'string');
 		this.size = [180, 180];
 	}
 
@@ -21,7 +21,7 @@
 
 	// Mixer - Mixes Items and/or/nor Liquids to make a Product
 	function Mixer() {
-		this.addInput('Item / Liquid');
+		this.addInput('Item / Liquid', 'string');
 		this.size = [180, 180];
 	}
 
@@ -39,7 +39,7 @@
 
 	// Crushing Wheel - Crushes Down Items into other Products
 	function CrushingWheels() {
-		this.addInput('Item');
+		this.addInput('Item', 'string');
 		this.size = [180, 180];
 	}
 
